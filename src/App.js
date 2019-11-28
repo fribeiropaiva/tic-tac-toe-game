@@ -66,25 +66,27 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <main className="game">
+
           <section className="game-board">
+            <h1 className="status">{status}</h1>
             <Board
               squares={current.squares}
               onClick={(i) => this.handleClick(i)}
-              restart={() => {
-                this.setState(
-                  {
-                    history: [{
-                      squares: Array(9).fill(null),
-                    }],
-                    xIsNext: true,
-                    stepNumber: 0,
-                  }
-                )
-              }}
             />
+            <button className="restart-btn" onClick={() => {
+              this.setState(
+                {
+                  history: [{
+                    squares: Array(9).fill(null),
+                  }],
+                  xIsNext: true,
+                  stepNumber: 0,
+                }
+              )
+            }}>Restart Game</button>
           </section>
           <section className="game-info">
-            <div>{status}</div>
+
             <ol>{moves}</ol>
           </section>
         </main>
@@ -104,7 +106,7 @@ function calculateWinner(squares) {
     [0, 4, 8],
     [2, 4, 6],
     [0, 3, 6],
-    [1, 4, 6],
+    [1, 4, 7],
     [2, 5, 8]
   ]
 

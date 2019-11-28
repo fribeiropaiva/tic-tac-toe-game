@@ -12,7 +12,7 @@ class Board extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="board-component">
         <div className="board-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
@@ -28,7 +28,7 @@ class Board extends React.Component {
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </div>
-        <button onClick={this.props.restart}>Restart Game</button>
+
       </div>
     )
   }
